@@ -15,15 +15,17 @@ class TrainSeeder extends Seeder
      */
     public function run(): void
     {
-        DB::table('trains')->insert([
-            'azienda' => 'tren Italia',
-            'stazione_di_arrivo' => 'Stazione Genova Brignole',
-            'orario_di_partenza' => '10:33',
-            'orario_di_arrivo' => '10:44',
-            'codice_treno' => rand(13322, 403433),
-            'numero_carrozze' => 55,
-            'in_orario' => 'si',
-            'cancellato' => 'no',
-        ]);
+        for ($i = 0; $i < 10; $i++) {
+            DB::table('trains')->insert([
+                'azienda' => 'tren Italia',
+                'stazione_di_arrivo' => 'Stazione Genova Brignole',
+                'orario_di_partenza' => '10:33',
+                'orario_di_arrivo' => '10:44',
+                'codice_treno' => rand(13322, 403433),
+                'numero_carrozze' => 55,
+                'in_orario' => 'si',
+                'cancellato' => 'no',
+            ]);
+        }
     }
 }
