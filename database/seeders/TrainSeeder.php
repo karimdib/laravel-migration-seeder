@@ -20,7 +20,7 @@ class TrainSeeder extends Seeder
             'stazione_di_arrivo' => 'Stazione Genova Brignole',
             'orario_di_partenza' => '10:33',
             'orario_di_arrivo' => '10:44',
-            'codice_treno' => 'ffa44443',
+            'codice_treno' => rand(13322, 403433),
             'numero_carrozze' => 55,
             'in_orario' => 'si',
             'cancellato' => 'no',
