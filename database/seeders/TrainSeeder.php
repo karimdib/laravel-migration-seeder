@@ -16,11 +16,11 @@ class TrainSeeder extends Seeder
     public function run(): void
     {
         DB::table('trains')->insert([
-            'azienda' => 'ciao',
-            'stazione_di_arrivo' => 'ciao',
+            'azienda' => 'tren Italia',
+            'stazione_di_arrivo' => 'Stazione Genova Brignole',
             'orario_di_partenza' => '10:33',
             'orario_di_arrivo' => '10:44',
-            'codice_treno' => 'ciao',
+            'codice_treno' => 'ffa44443',
             'numero_carrozze' => 55,
             'in_orario' => 'si',
             'cancellato' => 'no',
