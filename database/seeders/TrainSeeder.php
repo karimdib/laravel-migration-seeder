@@ -20,7 +20,7 @@ class TrainSeeder extends Seeder
      */
     public function run(Faker $faker): void
     {
-        for ($i = 0; $i < 5; $i++) {
+        for ($i = 0; $i < 100; $i++) {
             DB::table('trains')->insert([
                 'azienda' => $faker->randomElement(['Tren Italia', 'Intercity', 'Italo', 'Freccia Argento', 'Renfe', 'Frecciarossa 1000', 'Eurocity']),
                 'stazione_di_arrivo' => $faker->randomElement(['Termini', 'Milano Centrale ', 'Napoli Centrale', 'Genova Prinicipe', 'Genova Brignole', 'Roma Centrale', 'Bologna centrale']),
