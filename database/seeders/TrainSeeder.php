@@ -2,6 +2,8 @@
 
 namespace Database\Seeders;
 
+use Faker\Generator as Faker;
+
 use App\Models\train;
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
@@ -13,19 +15,19 @@ class TrainSeeder extends Seeder
     /**
      * Run the database seeds.
      */
-    public function run(): void
+    public function run(Faker $faker): void
     {
-        for ($i = 0; $i < 5; $i++) {
+        for ($i = 0; $i < 10; $i++) {
             DB::table('trains')->insert([
-                'azienda' => ' Freccia Rossa',
-                'stazione_di_arrivo' => 'Stazione Roma Centrale',
-                'orario_di_partenza' => '19:15',
-                'orario_di_arrivo' => '20:45',
-                'codice_treno' => rand(13322, 403433),
-                'numero_carrozze' => 35,
-                'in_orario' => 'si',
-                'cancellato' => 'no',
-                'giorno_transito' => '2023-12-13',
+                'azienda' => $faker->name,
+                'stazione_di_arrivo' => $faker->name,
+                'orario_di_partenza' => $faker->time(),
+                'orario_di_arrivo' => $faker->time(),
+                'codice_treno' => $faker->name,
+                'numero_carrozze' => 9,
+                'in_orario' => $faker->boolean(),
+                'cancellato' => $faker->boolean(),
+                'giorno_transito' => $faker->date(),
             ]);
         }
     }
