@@ -17,14 +17,14 @@ class TrainSeeder extends Seeder
      */
     public function run(Faker $faker): void
     {
-        for ($i = 0; $i < 10; $i++) {
+        for ($i = 0; $i < 100; $i++) {
             DB::table('trains')->insert([
-                'azienda' => $faker->name,
-                'stazione_di_arrivo' => $faker->name,
+                'azienda' => $faker->randomElement(['Tren Italia', 'Intercity', 'Italo', 'Freccia Argento', 'Renfe', 'Frecciarossa 1000', 'Eurocity']),
+                'stazione_di_arrivo' => $faker->randomElement(['Termini', 'Milano Centrale ', 'Napoli Centrale', 'Genova Prinicipe', 'Genova Brignole', 'Roma Centrale', 'Bologna centrale']),
                 'orario_di_partenza' => $faker->time(),
                 'orario_di_arrivo' => $faker->time(),
-                'codice_treno' => $faker->name,
-                'numero_carrozze' => 9,
+                'codice_treno' => $faker->unique()->bothify('?##?##'),
+                'numero_carrozze' => $faker->numberBetween(1, 250),
                 'in_orario' => $faker->boolean(),
                 'cancellato' => $faker->boolean(),
                 'giorno_transito' => $faker->date(),
