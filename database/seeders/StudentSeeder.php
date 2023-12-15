@@ -15,7 +15,7 @@ class StudentSeeder extends Seeder
     {
         $csv = fopen(base_path("csv/ultima.csv"), "r");
         $firstline = true;
-        while (($data = fgetcsv($csv)) !== FALSE) {
+        while (($data = fgetcsv($csv)) !== false) {
             if (!$firstline) {
                 Student::create([
                     "name" => $data['0'],

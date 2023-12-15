@@ -1,4 +1,5 @@
 @vite('resources/js/app.js')
+<h1>Prova bracnh</h1>
 <div class="container">
     <div class="row">
         @foreach ($trainss as $key =>$value)
