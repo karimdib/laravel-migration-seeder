@@ -9,7 +9,7 @@ class TrainsController extends Controller
 {
     public function index()
     {
-        $trainss = train::where('giorno_transito', '2023-12-13')->get();
+        $trainss = train::where('in_orario', '1')->get();
 
         return view('train_page', compact('trainss'));
     }
